@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 import {createThemes} from "tw-colors";
 import colors, { black } from "tailwindcss/colors";
-import { create } from 'domain'
+import { create } from 'domain';
 
 const baseColors = [
   "gray",
