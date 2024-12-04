@@ -9,7 +9,7 @@ export default function PopularProducts() {
         <div className='row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16'>
             {isLoading ? 
                 <div className='m-5'>Loading...</div> :
-                <div className='m-5'>
+                <>
                     <h3 className='text-lg font-semibold px-7 pt-5 pb-2'>Popular Products</h3>
                     <hr />
                     <div className='overflow-auto h-full'>
@@ -19,9 +19,9 @@ export default function PopularProducts() {
                                     <div>Image</div>
                                     <div className='flex flex-col justify-between gap-1'>
                                         <div className='font-bold text-gray-700'>{product.name}</div>
-                                        <div className='flex text-small items-center'>
+                                        <div className='flex text-sm items-center'>
                                             <span className='font-bold text-blue-500 text-xs'>${product.price}</span>
-                                            <span className='mx-2'> | </span>
+                                            <span className='mx-2'>|</span>
                                             <Rating rating={product.rating || 0} />
                                         </div>
                                     </div>
@@ -35,7 +35,7 @@ export default function PopularProducts() {
                             </div>
                         ))}
                     </div>
-                </div>
+                </>
             }
         </div>
     );
