@@ -18,7 +18,7 @@ export default function Users() {
     }
 
     if (isError || !users) {
-        return <div className='text-center text-red-500 py-4'>Failed to fetch users</div>;
+        return <div className='text-center text-red-500 py-4'>Failed to fetch users.</div>;
     }
 
     return (

@@ -49,6 +49,6 @@ export const getDashboardData = async (req: Request, res: Response): Promise<voi
             expenseByCategorySummary,
         });
     } catch (error) {
-        res.status(500).json({ message: 'Error retrieving dashboard metrics' });
+        res.status(500).json({ message: 'Error retrieving dashboard metrics.' });
     }
 };
