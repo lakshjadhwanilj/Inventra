@@ -22,7 +22,7 @@ export default function PurchaseSummary() {
                     </div>
 
                     {/* BODY */}
-                    <div>
+                    <div className='overflow-hidden'>
                         {/* BODY HEADER */}
                         <div className='mb-4 mt-7 px-7'>
                             <p className='text-xs test-gray-400'>Purchased</p>
@@ -44,7 +44,7 @@ export default function PurchaseSummary() {
                         </div>
 
                         {/* CHART */}
-                        <ResponsiveContainer width='100%' height={200} className='p-2'>
+                        <ResponsiveContainer width='100%' height={180} className='p-2'>
                             <AreaChart data={purchaseData} margin={{ top: 0, right: 0, left: -50, bottom: 45 }}>
                                 <XAxis dataKey='date' tick={false} axisLine={false} />
                                 <YAxis tick={false} tickLine={false} axisLine={false} />
