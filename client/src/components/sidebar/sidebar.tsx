@@ -1,10 +1,11 @@
 'use client';
-import { useAppDispatch, useAppSelector } from '@/app/redux'
-import { Archive, CircleDollarSign, Clipboard, Icon, Layout, LucideIcon, Menu, SlidersHorizontal, Users } from 'lucide-react';
+
 import React from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useAppDispatch, useAppSelector } from '@/app/redux';
 import { setIsSideBarCollapsed } from '@/state';
-import { usePathname } from 'next/navigation'
-import Link from 'next/link'
+import { Archive, CircleDollarSign, Clipboard, Icon, Layout, LucideIcon, Menu, SlidersHorizontal, Users } from 'lucide-react';
 
 interface SidebarLinkProps {
     href: string,
@@ -29,7 +30,7 @@ const SidebarLink = ({
                 <span className={`${isCollapsed ? 'hidden' : 'block'} font-medium text-gray-700`}>{label}</span>
             </div>
         </Link>
-    )
+    );
 }
 
 export default function Sidebar() {

@@ -1,7 +1,7 @@
-import { useGetDashboardDataQuery } from '@/state/api';
-import { TrendingUp } from 'lucide-react';
 import React, { useState } from 'react';
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { useGetDashboardDataQuery } from '@/state/api';
+import { TrendingUp } from 'lucide-react';
 
 export default function SalesSummary() {
     const { data, isLoading, isError } = useGetDashboardDataQuery();

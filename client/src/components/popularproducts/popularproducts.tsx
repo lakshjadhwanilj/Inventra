@@ -1,7 +1,7 @@
-import { useGetDashboardDataQuery } from '@/state/api';
-import { ShoppingBag } from 'lucide-react';
 import React from 'react';
 import Rating from '@/components/rating/rating';
+import { useGetDashboardDataQuery } from '@/state/api';
+import { ShoppingBag } from 'lucide-react';
 
 export default function PopularProducts() {
     const { data: dashboardMetrics, isLoading } = useGetDashboardDataQuery();

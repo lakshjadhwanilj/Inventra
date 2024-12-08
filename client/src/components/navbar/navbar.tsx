@@ -1,9 +1,10 @@
 'use client';
+
+import React from 'react';
+import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/app/redux';
 import { setIsDarkMode, setIsSideBarCollapsed } from '@/state';
 import { Bell, Menu, Moon, Settings, Sun } from 'lucide-react';
-import Link from 'next/link';
-import React from 'react';
 
 export default function Navbar() {
   const dispatch = useAppDispatch();

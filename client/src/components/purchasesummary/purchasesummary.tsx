@@ -1,8 +1,8 @@
 import React from 'react';
 import numeral from 'numeral';
+import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { useGetDashboardDataQuery } from '@/state/api';
 import { TrendingDown, TrendingUp } from 'lucide-react';
-import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 export default function PurchaseSummary() {
     const { data, isLoading } = useGetDashboardDataQuery();
