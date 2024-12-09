@@ -18,7 +18,7 @@ export default function PopularProducts() {
                             <div key={product.productId} className='flex justify-between items-center gap-3 px-5 py-7 border-b'>
                                 <div className='flex items-center gap-3'>
                                     <Image
-                                        src={`https://s3-inventra-inventorymanagement.s3.us-west-1.amazonaws.com/${Math.floor(Math.random() * 3) + 1}.png`}
+                                        src={`https://s3-inventra-inventorymanagement.s3.us-west-1.amazonaws.com/product${Math.floor(Math.random() * 3) + 1}.png`}
                                         alt={product.name}
                                         width={48}
                                         height={48}

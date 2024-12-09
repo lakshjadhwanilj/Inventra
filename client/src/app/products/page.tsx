@@ -70,7 +70,7 @@ export default function Products() {
                         <div key={product.productId} className='border shadow rounded-md p-4 max-w-full w-full mx-auto'>
                             <div className='flex flex-col items-center'>
                                 <Image
-                                    src={`https://s3-inventra-inventorymanagement.s3.us-west-1.amazonaws.com/${Math.floor(Math.random() * 3) + 1}.png`}
+                                    src={`https://s3-inventra-inventorymanagement.s3.us-west-1.amazonaws.com/product${Math.floor(Math.random() * 3) + 1}.png`}
                                     alt={product.name}
                                     width={150}
                                     height={150}
