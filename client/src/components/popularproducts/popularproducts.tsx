@@ -2,6 +2,7 @@ import React from 'react';
 import Rating from '@/components/rating/rating';
 import { useGetDashboardDataQuery } from '@/state/api';
 import { ShoppingBag } from 'lucide-react';
+import Image from 'next/image'
 
 export default function PopularProducts() {
     const { data: dashboardMetrics, isLoading } = useGetDashboardDataQuery();
@@ -16,7 +17,13 @@ export default function PopularProducts() {
                         {dashboardMetrics?.popularProducts.map((product) => (
                             <div key={product.productId} className='flex justify-between items-center gap-3 px-5 py-7 border-b'>
                                 <div className='flex items-center gap-3'>
-                                    <div>Image</div>
+                                    <Image
+                                        src={`https://s3-inventra-inventorymanagement.s3.us-west-1.amazonaws.com/${Math.floor(Math.random() * 3) + 1}.png`}
+                                        alt={product.name}
+                                        width={48}
+                                        height={48}
+                                        className='rounded-lg w-14 h-14'
+                                    />
                                     <div className='flex flex-col justify-between gap-1'>
                                         <div className='font-bold text-gray-700'>{product.name}</div>
                                         <div className='flex text-sm items-center'>

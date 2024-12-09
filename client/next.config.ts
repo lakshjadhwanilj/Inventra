@@ -5,6 +5,16 @@ const nextConfig: NextConfig = {
   devIndicators: {
     appIsrStatus: false,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "https://s3-inventra-inventorymanagement.s3.us-west-1.amazonaws.com",
+        port: "",
+        pathname: "/**",
+      }
+    ],
+  },
 };
 
 export default nextConfig;

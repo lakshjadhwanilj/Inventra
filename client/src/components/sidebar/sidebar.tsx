@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { useAppDispatch, useAppSelector } from '@/app/redux';
 import { setIsSideBarCollapsed } from '@/state';
 import { Archive, CircleDollarSign, Clipboard, Layout, LucideIcon, Menu, SlidersHorizontal, Users } from 'lucide-react';
+import Image from 'next/image'
 
 interface SidebarLinkProps {
     href: string,
@@ -48,7 +49,13 @@ export default function Sidebar() {
         <div className={sidebarClassNames}>
             {/* TOP LOGO */}
             <div className={`flex gap-3 justify-between md:justify-normal items-center pt-8 ${isSidebarCollapsed ? 'px-5' : 'px-8'}`}>
-                <div>logo</div>
+                <Image
+                    src='https://s3-inventra-inventorymanagement.s3.us-west-1.amazonaws.com/logo.png'
+                    alt='Inventra-logo'
+                    width={27}
+                    height={27}
+                    className='rounded w-8'
+                />
                 <h1 className={`font-extrabold text-2xl ${isSidebarCollapsed ? 'hidden' : 'block'}`}>INVENTRA</h1>
                 <button className='md:hidden px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100' onClick={toggleSidebar}>
                     <Menu className='w-4 h-4' />
