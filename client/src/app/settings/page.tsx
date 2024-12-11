@@ -49,6 +49,7 @@ export default function Settings() {
 								</td>
 								<td className='py-2 px-4'>
 									{setting.type === 'toggle' ? (
+										// Toggle switch for boolean settings
 										<label className='inline-flex relative items-center cursor-pointer'>
 											<input
 												type='checkbox'
@@ -61,6 +62,7 @@ export default function Settings() {
 											</div>
 										</label>
 									) : (
+										// Text input for string settings
 										<input 
 											type="text" 
 											className='px-4 py-2 border rounded-lg text-gray-500 focus:outline-none focus:border-blue-500'

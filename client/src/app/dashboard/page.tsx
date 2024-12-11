@@ -7,6 +7,7 @@ import SalesSummary from '@/components/salessummary/salessummary';
 import StatsCard from '@/components/statscard/statscard';
 import { CheckCircle, Package, Tag, TrendingDown, TrendingUp } from 'lucide-react';
 
+// Dashboard component
 export default function Dashboard() {
 	return (
 		<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:overflow-auto gap-10 pb-4 custom-grid-rows'>

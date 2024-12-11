@@ -19,6 +19,7 @@ export default function Products() {
     const [searchTerm, setSearchTerm] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    // Fetch products based on search term
     const { data: products, isLoading, isError } = useGetProductsQuery(searchTerm);
 
     const [createProduct] = useCreateProductMutation();
@@ -66,6 +67,7 @@ export default function Products() {
                 {isLoading ? (
                     <div>Loading...</div>
                 ) : (
+                    // Map through products and display each product
                     products?.map((product) => (
                         <div key={product.productId} className='border shadow rounded-md p-4 max-w-full w-full mx-auto'>
                             <div className='flex flex-col items-center'>

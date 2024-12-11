@@ -12,7 +12,7 @@ async function deleteAllData(orderedFileNames: string[]) {
     for (const modelName of modelNames) {
         const model: any = prisma[modelName as keyof typeof prisma];
         if (model) {
-            await model.deleteMany({});
+            await model.deleteMany({}); // Clear existing data
             console.log(`Cleared data from ${modelName}`);
         } else {
             console.error(
@@ -23,7 +23,7 @@ async function deleteAllData(orderedFileNames: string[]) {
 }
 
 async function main() {
-    const dataDirectory = path.join(__dirname, 'seedData');
+    const dataDirectory = path.join(__dirname, 'seedData'); // Directory containing seed data files
 
     const orderedFileNames = [
         'products.json',
@@ -37,11 +37,11 @@ async function main() {
         'expenseByCategory.json',
     ];
 
-    await deleteAllData(orderedFileNames);
+    await deleteAllData(orderedFileNames); // Delete existing data before seeding
 
     for (const fileName of orderedFileNames) {
         const filePath = path.join(dataDirectory, fileName);
-        const jsonData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        const jsonData = JSON.parse(fs.readFileSync(filePath, 'utf-8')); // Read and parse JSON data
         const modelName = path.basename(fileName, path.extname(fileName));
         const model: any = prisma[modelName as keyof typeof prisma];
 
@@ -53,7 +53,7 @@ async function main() {
         for (const data of jsonData) {
             await model.create({
                 data,
-            });
+            }); // Insert data into the model
         }
 
         console.log(`Seeded ${modelName} with data from ${fileName}`);
@@ -63,5 +63,5 @@ async function main() {
 main().catch((e) => {
     console.error(e);
 }).finally(async () => {
-    await prisma.$disconnect();
+    await prisma.$disconnect(); // Disconnect Prisma client
 });

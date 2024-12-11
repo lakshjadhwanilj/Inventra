@@ -4,6 +4,7 @@ import Header from '@/components/header/header';
 import { useGetUsersQuery } from '@/state/api';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
+// Define columns for the DataGrid
 const columns: GridColDef[] = [
     { field: 'userId', headerName: 'ID', width: 90 },
     { field: 'name', headerName: 'Name', width: 200 },
@@ -11,13 +12,16 @@ const columns: GridColDef[] = [
 ];
 
 export default function Users() {
+    // Fetch users data using custom hook
     const { data: users, isError, isLoading } = useGetUsersQuery();
 
     if (isLoading) {
+        // Show loading state
         return <div className='py-4'>Loading...</div>;
     }
 
     if (isError || !users) {
+        // Show error state
         return <div className='text-center text-red-500 py-4'>Failed to fetch users.</div>;
     }
 
